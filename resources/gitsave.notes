@@ -1,0 +1,10 @@
+Commit Message Guidelines
+
+FEAT		commits that add or remove a feature
+FIX		commits that fix a bug
+REFACTOR	commits for rewrites / restructuring to the code, but no change in behavior
+STYLE		commits for changes to syntax (removing white spaces, correcting formatting, etc)
+DOCS		commits that affect documentation only
+CHORE		commits for consistent things such as updating as part of a daily task
+
+After deciding hit 'q' to exit and enter your commit message to finalize.

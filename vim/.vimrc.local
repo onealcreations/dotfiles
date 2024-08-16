@@ -1,0 +1,32 @@
+" CONFIGURATION SETTINGS {{{
+"_______________________________________________________________________________________________________
+	:let g:markdown_fenced_anguages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'c', 'python', 'go', 'cpp']
+" }}}
+
+" AUTOCMD GROUPS {{{
+"_______________________________________________________________________________________________________
+	:augroup Markdown " {{{
+	:autocmd!
+	:autocmd Filetype markdown :setlocal wrap
+	:augroup END "}}}
+
+	:augroup Python " {{{
+	:autocmd!
+	:autocmd BufNewFile *.py 0r ~/templates/skeleton.py
+	:augroup END " }}}
+
+	:augroup BAT " {{{
+	:autocmd!
+	:autocmd BufNewFile *.bat 0r ~/templates/skeleton.bat
+	:augroup END " }}}
+
+	:augroup README " {{{
+	:autocmd!
+	:autocmd BufNewFile README*.md 0r ~/templates/README.md
+	:augroup END " }}}
+
+	:augroup PS1 " {{{
+	:autocmd!
+	:autocmd BufNewFile *.ps1 0r ~/templates/skeleton.ps1
+	:augroup END " }}}
+" }}}
