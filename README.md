@@ -67,7 +67,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Project Details
+**dotfiles** is a collection of my custom configuration files, used as part of my journey into learning coding and development. This repository houses settings for bash, vim, and other supportin configuration files that I utilize to enhance my workflow as I continue to grow my skillset. This repository is primarily used as a backup so I don't lose any configuration files due to hardware failure, while also maintaining a version-controlled backup of my evolving setup.
+
+This repository is organized into directories for each set of configuration, such as `bash` and `vim`, along with supportinf iles located in the `resources` directory. Whether you're just starting out like me or looking to tweak your current setup, this collection offers a well-documented and accessible way to development environment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
