@@ -1,5 +1,53 @@
 #!/bin/bash
 
+# Function to prompt the user about backup up their files
+check_backup() {
+	echo -n "Have you backed up your existing configuration files? (yes/no): "
+	read -r user_response
+
+	case "$user_response" in
+		"yes" | "Yes" | "YES")
+			echo "Great! Proceeding with the installation..."
+			;;
+		"no" | "No" | "NO")
+			echo "Creating a backup of your existing configuration files..."
+			create_backup
+			;;
+		*)
+			echo "Invalid response. Please answer with 'yes' or 'no'."
+			check_backup
+			;;
+		esac
+}
+
+# Function to create a bacup of existing configuration files
+create_backup() {
+	BACKUP_DIR="$HOME/backupConfigs"
+	mkdir -p "$BACKUP_DIR" # Create the backup directory if it doesn't exist
+
+	# List of configuration files to backup
+	CONFIG_FILES=(
+		"$HOME/.bash_aliases"
+		"$HOME/.bashrc"
+		"$HOME/.inputrc"
+		"$HOME/.vimrc"
+		"$HOME/.vimrc.local"
+	)
+
+	# Loop through each configuration file and copy it to the backup directory
+	for file in "${CONFIG_FILES[@]}"; do
+		if [ -f "$file" ]; then
+			mv "$file" "$BACKUP_DIR"
+			echo "Backed up $file to $BACKUP_DIR"
+		fi
+	done
+
+	echo "Backup completed. Proceeding with the installation..."
+}
+
+# Run the backup check
+check_backup
+
 # Define the path to the current directory
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
